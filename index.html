@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dennis | Research Engineer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('assets/background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+      pointer-events: none;
+      height: 90%;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 700px;
+      width: 90%;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 30px;
+      backdrop-filter: blur(5px);
+      padding: 30px 30px;
+      box-sizing: border-box;
+    }
+
+    .inner-content {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .left-panel {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+      border-right: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .right-panel {
+      flex: 2;
+      padding: 20px;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      object-fit: cover;
+      box-shadow: 0 0 20px #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .profile-pic:hover {
+      filter: brightness(1.25);
+      box-shadow: 0 0 30px #ffffff;
+    }
+
+    h1, h2, h3 {
+      margin: 10px 0;
+    }
+
+    h1 {
+      font-size: 1.4em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      font-weight: normal;
+      color: #cccccc;
+    }
+
+    h3 {
+      font-size: 1.1em;
+      color: #c6c6c6;
+    }
+    
+    .location {
+      margin-top: 6px;
+      margin-bottom: 30px;
+      font-size: 0.95em;
+      color: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .location i {
+      color: #32e0d7; /* pinkish marker */
+      font-size: 1em;
+    }
+
+    .links a {
+      margin: 0 10px;
+      color: #ffffff;
+      font-size: 2em;
+      text-decoration: none;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    .links a:hover {
+      color: #19c2ae;
+      text-shadow: 0 0 8px #19c2ae;
+    }
+
+    .glow:hover {
+      color: #f9ffb2;
+      text-shadow: 0 0 10px #19c2ae, 0 0 20px #6e3efc;
+    }
+
+    .cv-button {
+      margin: 20px 0;
+      padding: 10px 20px;
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cv-button:hover {
+      background: #444;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .section ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .section li {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      width: 100%;
+      text-align: center;
+      font-size: 0.85em;
+      color: #aaa;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .robot, #rocket {
+      position: absolute;
+      width: 100px;
+      cursor: pointer;
+      transition: left 1s linear, top 1s linear;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        padding: 20px;
+        max-width: none;
+        width: 75%;
+      }
+
+      .inner-content {
+        flex-direction: column;
+      }
+
+      .left-panel {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+      }
+
+      .profile-pic {
+        width: 110px;
+        height: 110px;
+      }
+
+      h1 {
+        font-size: 1.4em;
+      }
+
+      h2 {
+        font-size: 1.1em;
+      }
+
+      h3 {
+        font-size: 1em;
+      }
+
+      .links a {
+        font-size: 1.6em;
+      }
+
+      .footer {
+        font-size: 0.75em;
+      }
+
+      .robot, #rocket {
+        width: 70px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .robot, #rocket {
+        width: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <div class="container">
+    <div class="inner-content">
+      <div class="left-panel">
+        <img class="profile-pic" src="https://avatars.githubusercontent.com/u/37432412?v=4" alt="Profile" />
+        <h1 class="glow">Dennis R. Wong</h1>
+        <h3>Research Engineer</h3>
+        <div class="location">
+          <i class="fas fa-map-marker-alt"></i> Seoul, KR
+        </div>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/dennis-ronaldi-wong"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/deronaldi"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/deronalld/"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <h2>About Me</h2>
+        <p>
+        I build intelligent systems using statistical modeling, algorithmic search, probabilistic inference, and natural language processing. 
+        With experience in both theoretical and applied AI, I develop practical solutions in areas such as finance, robotics, and user-centered 
+        technologies, always emphasizing clarity, performance, and real-world impact.
+        </p>
+
+        <div class="section">
+          <h3>Skills</h3>
+          <p>
+            AI • ML • NLP • Data Science • Computer Vision •
+            Big Data Analytics • Data Visualization • Power BI •
+            Django • Flask • Design • Human-Computer Interaction •
+            Financial Modeling • Algorithmic Trading • Robotics
+          </p>
+        </div>
+
+        <div class="section">
+          <h3>Programming Languages</h3>
+          <p>
+            SQL (Microsoft SQL Server, MySQL, SQLite) • C • C++ • Python • R • Java • JavaScript
+          </p>
+        </div>
+
+        <div class="section">
+          <h3>Education</h3>
+          <ul>
+            <li><i class="fas fa-graduation-cap"></i> M.S. Comp. Sci. - Georgia Tech</li>
+            <li><i class="fas fa-graduation-cap"></i> B.S. Mech. Eng. - Korea University</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; Web Design and Development by Dennis R. Wong</p>
+    </div>
+  </div>
+
+  <img id="robot" class="robot" src="assets/robot_transparent_white.gif" alt="Robot Icon">
+  <img id="rocket" src="assets/rocket_transparent_white.gif" alt="Rocket Icon">
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 110, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#FFFFFF" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.7, "random": true },
+        "size": { "value": 2, "random": true },
+        "line_linked": {
+          "enable": true,
+          "distance": 200,
+          "color": "#75A5B7",
+          "opacity": 0.3,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 1,
+          "direction": "none",
+          "random": false,
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": false },
+          "onclick": { "enable": false }
+        }
+      },
+      "retina_detect": true
+    });
+
+    const robot = document.getElementById('robot');
+    const rocket = document.getElementById('rocket');
+
+    function getSide(element) {
+      const centerX = element.getBoundingClientRect().left + element.offsetWidth / 2;
+      return centerX < window.innerWidth / 2 ? 'left' : 'right';
+    }
+
+    function moveRandomlySide(element, side) {
+      const sideRange = side === 'left' ? [0, 0.25] : [0.75, 1];
+      const maxX = window.innerWidth * sideRange[1] - element.clientWidth;
+      const minX = window.innerWidth * sideRange[0];
+      const maxY = window.innerHeight - element.clientHeight;
+      const newX = Math.random() * (maxX - minX) + minX;
+      const newY = Math.random() * maxY;
+      element.style.left = `${newX}px`;
+      element.style.top = `${newY}px`;
+    }
+
+    moveRandomlySide(robot, 'left');
+    moveRandomlySide(rocket, Math.random() < 0.5 ? 'left' : 'right');
+
+    let rocketInterval = null;
+    function startRocketInterval() {
+      if (rocketInterval) clearInterval(rocketInterval);
+      rocketInterval = setInterval(() => {
+        moveRandomlySide(rocket, Math.random() < 0.5 ? 'left' : 'right');
+      }, 3000);
+    }
+    startRocketInterval();
+
+    robot.addEventListener('mouseenter', () => {
+      robot.style.pointerEvents = "none";
+      if (rocketInterval) clearInterval(rocketInterval);
+      const rocketRect = rocket.getBoundingClientRect();
+      rocket.style.transition = "none";
+      rocket.style.transform = "none";
+      rocket.style.left = `${rocketRect.left}px`;
+      rocket.style.top = `${rocketRect.top}px`;
+
+      const robotRect = robot.getBoundingClientRect();
+      const offsetX = robotRect.left - rocketRect.left;
+      const offsetY = robotRect.top - rocketRect.top;
+
+      setTimeout(() => {
+        rocket.style.transition = "transform 0.15s linear";
+        rocket.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      }, 0);
+
+      setTimeout(() => {
+        const currentSide = getSide(robot);
+        const targetSide = currentSide === 'left' ? 'right' : 'left';
+        const sideRange = targetSide === 'left' ? [0, 0.25] : [0.75, 1];
+        const maxX = window.innerWidth * sideRange[1] - robot.clientWidth;
+        const minX = window.innerWidth * sideRange[0];
+        const maxY = window.innerHeight - robot.clientHeight;
+        const newX = Math.random() * (maxX - minX) + minX;
+        const newY = Math.random() * maxY;
+
+        robot.style.transition = "left 0.5s linear, top 0.5s linear";
+        rocket.style.transition = "transform 0.5s linear, left 0.5s linear, top 0.5s linear";
+        robot.style.left = `${newX}px`;
+        robot.style.top = `${newY}px`;
+        rocket.style.left = `${newX}px`;
+        rocket.style.top = `${newY}px`;
+        rocket.style.transform = "translate(0, 0)";
+
+        setTimeout(() => {
+          moveRandomlySide(rocket, targetSide);
+          setTimeout(() => {
+            robot.style.pointerEvents = "auto";
+            startRocketInterval();
+          }, 500);
+        }, 500);
+      }, 500);
+    });
+
+
+    rocket.addEventListener('mouseenter', () => {
+      if (!rocketBoostTimeout) {
+        window.pJSDom[0].pJS.particles.move.speed = 10;
+      }
+    });
+
+    rocket.addEventListener('mouseleave', () => {
+      if (!rocketBoostTimeout) {
+        window.pJSDom[0].pJS.particles.move.speed = 1;
+      }
+    });
+
+    let rocketBoostTimeout = null;
+    rocket.addEventListener('click', () => {
+      const pJS = window.pJSDom[0].pJS;
+
+      if (rocketBoostTimeout) clearTimeout(rocketBoostTimeout);
+
+      pJS.particles.move.speed = 30;
+
+      rocketBoostTimeout = setTimeout(() => {
+        pJS.particles.move.speed = 1;
+        rocketBoostTimeout = null;
+      }, 3000);
+    });
+  </script>
+</footer>
+</body>
+</html>
