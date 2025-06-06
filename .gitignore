@@ -1,0 +1,13 @@
+.DS_Store
+
+node_modules/
+
+build/
+dist/
+
+_site/
+
+.env
+
+.vscode/
+.idea/
